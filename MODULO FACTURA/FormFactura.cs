@@ -24,6 +24,8 @@ namespace MODULO_FACTURA
             productos.Columns.Add("Nombre", "Nombre");
             productos.Columns.Add("Descripcion", "Descripción");
             productos.Columns.Add("Precio", "Precio");
+            productos.Columns.Add("Cantidad", "Cantidad");
+            productos.Columns.Add("PrecioTotal", "Precio Total");
 
         }
 

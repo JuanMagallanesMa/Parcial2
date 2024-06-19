@@ -28,6 +28,7 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
             productos.Columns.Add("Descripcion", "Descripción");
             productos.Columns.Add("Precio", "Precio Unitario");
             productos.Columns.Add("Cantidad","Cantidad");
+            productos.Columns.Add("PrecioTotal", "Precio Total");
 
         }
         /*metodo para cargar los datos del nombre de la empresa*/
@@ -55,21 +56,26 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
 
             decimal subtotal = 0;
             decimal ivaPorcentaje = 0.12m;
+            
             foreach (var producto in productosSeleccionados)
             {
-                productos.Rows.Add(producto.Nombre_producto, producto.Descripcion_producto, producto.Precio);
+                productos.Rows.Add(producto.Nombre_producto, producto.Descripcion_producto, producto.Precio, producto.Cantidad, producto.PrecioTotalS);
             }
             foreach (PlantillaProductos producto in productosSeleccionados)
             {
                 if (decimal.TryParse(producto.Precio.Replace("$", ""), NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal precioDecimal))
                 {
-                    subtotal += precioDecimal;
+                    int cantidad= producto.Cantidad;
+                    decimal precioTotal = precioDecimal * cantidad;
+                    subtotal += precioTotal;
                 }
                 else
                 {
                     MessageBox.Show($"Error al analizar el precio del producto: {producto.Nombre_producto}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+           
+
 
             // Calcula IVA y Total
             decimal iva = subtotal * ivaPorcentaje;

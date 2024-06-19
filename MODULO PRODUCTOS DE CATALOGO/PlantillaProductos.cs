@@ -34,15 +34,23 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
             get { return lblNombre_Producto.Text; }
             set { lblNombre_Producto.Text = value; }
         }
+        public int Cantidad
+        {
+            get {
+                return Convert.ToInt32(txtCantidad.Text);
+ 
+            }
+            set { txtCantidad.Text = value.ToString(); }
+        }
         public decimal PrecioD
         {
             get
             {
-                if (decimal.TryParse(lblPrecio.Text.Replace("$", ""), NumberStyles.Currency, CultureInfo.InvariantCulture, out decimal precio))
+                if (decimal.TryParse(Precio.Replace("$", ""), NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal precioD))
                 {
                     
                    // MessageBox.Show("Cambiado el formato");
-                    return precio;
+                    return precioD;
                 }
                 else
                 {
@@ -51,7 +59,24 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
                 }
             }
         }
-
+        public string PrecioTotalS
+        {
+            get
+            {
+                string totalstring = "$" + PrecioTotal.ToString();
+                return totalstring;
+            }
+            
+        }
+        public decimal PrecioTotal
+        {
+            get
+            {
+                decimal precioDecimal= PrecioD;
+                int cantidad = Cantidad;
+                return precioDecimal * cantidad;
+            }
+        }
         public string Precio
         {
             get { return lblPrecio.Text; }
