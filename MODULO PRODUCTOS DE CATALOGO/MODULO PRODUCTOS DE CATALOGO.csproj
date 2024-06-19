@@ -275,6 +275,15 @@
     <Analyzer Include="..\PROYECTO TECNOLAPTOPS\packages\MSTest.Analyzers.3.4.1\analyzers\dotnet\cs\MSTest.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\PROYECTO TECNOLAPTOPS\packages\MSTest.Analyzers.3.4.1\analyzers\dotnet\cs\MSTest.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_258365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_9872149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_6399334.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

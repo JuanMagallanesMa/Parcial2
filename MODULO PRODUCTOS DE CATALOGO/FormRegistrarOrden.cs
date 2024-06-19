@@ -26,7 +26,8 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
             productos.AutoGenerateColumns = false;
             productos.Columns.Add("Nombre", "Nombre");
             productos.Columns.Add("Descripcion", "Descripción");
-            productos.Columns.Add("Precio", "Precio");
+            productos.Columns.Add("Precio", "Precio Unitario");
+            productos.Columns.Add("Cantidad","Cantidad");
 
         }
         /*metodo para cargar los datos del nombre de la empresa*/

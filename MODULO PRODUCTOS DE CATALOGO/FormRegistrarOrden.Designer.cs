@@ -116,12 +116,14 @@
             // productos
             // 
             this.productos.AllowUserToAddRows = false;
+            this.productos.AllowUserToDeleteRows = false;
             this.productos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productos.Location = new System.Drawing.Point(12, 458);
-            this.productos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.productos.Margin = new System.Windows.Forms.Padding(6);
             this.productos.Name = "productos";
+            this.productos.ReadOnly = true;
             this.productos.RowHeadersWidth = 82;
             this.productos.Size = new System.Drawing.Size(1086, 212);
             this.productos.TabIndex = 60;
@@ -138,9 +140,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 115);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(694, 306);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
@@ -150,7 +152,7 @@
             // 
             this.comboEmpresa.FormattingEnabled = true;
             this.comboEmpresa.Location = new System.Drawing.Point(382, 246);
-            this.comboEmpresa.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboEmpresa.Margin = new System.Windows.Forms.Padding(6);
             this.comboEmpresa.Name = "comboEmpresa";
             this.comboEmpresa.Size = new System.Drawing.Size(276, 34);
             this.comboEmpresa.TabIndex = 9;
@@ -158,7 +160,7 @@
             // txtProveedor
             // 
             this.txtProveedor.Location = new System.Drawing.Point(258, 181);
-            this.txtProveedor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(6);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Size = new System.Drawing.Size(400, 32);
             this.txtProveedor.TabIndex = 8;
@@ -166,7 +168,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(258, 131);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(400, 32);
             this.txtNombre.TabIndex = 7;
@@ -174,7 +176,7 @@
             // date
             // 
             this.date.Location = new System.Drawing.Point(116, 60);
-            this.date.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.date.Margin = new System.Windows.Forms.Padding(6);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(542, 32);
             this.date.TabIndex = 6;
@@ -239,7 +241,7 @@
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(750, 208);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(348, 127);
             this.button2.TabIndex = 67;
@@ -264,7 +266,7 @@
             this.Controls.Add(this.productos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormRegistrarOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegistrarOrden";

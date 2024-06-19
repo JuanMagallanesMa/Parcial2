@@ -93,6 +93,16 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_6399334 {
+            get {
+                object obj = ResourceManager.GetObject("add_6399334", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boton_modificar {
             get {
                 object obj = ResourceManager.GetObject("boton modificar", resourceCulture);
@@ -193,9 +203,29 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus_9872149 {
+            get {
+                object obj = ResourceManager.GetObject("minus_9872149", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap modificar {
             get {
                 object obj = ResourceManager.GetObject("modificar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_258365 {
+            get {
+                object obj = ResourceManager.GetObject("plus_258365", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -75,7 +75,25 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
             CarritoStateChanged?.Invoke(this, EventArgs.Empty);
         }
 
-      
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
+
+        private void btnMas_Click(object sender, EventArgs e)
+        {
+            int valor = Convert.ToInt32(txtCantidad.Text);
+            valor++;
+            txtCantidad.Text = valor.ToString();
+            
+        }
+
+        private void btnMenos_Click(object sender, EventArgs e)
+        {
+            int valor = Convert.ToInt32(txtCantidad.Text);
+            valor--;
+            txtCantidad.Text = valor.ToString();
+        }
+    }
     }
 
