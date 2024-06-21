@@ -1,4 +1,4 @@
-use [Proyecto TeleShopping]
+use [Proyecto_Laptops]
 --TABLA  USUARIO
 create table usuarios
 ( 
@@ -22,6 +22,33 @@ precio float,
 total float,
 imagen varbinary(max),
 FOREIGN KEY (id_proveedor) REFERENCES usuarios(id_usuario)
+);
+--TABLA ENCABEZADO COMPRA
+create table enc_compra
+(
+id_establecimiento int,
+id_caja int,
+id_numero_factura int primary key IDENTITY(1,1),
+id_cliente int,
+ruc_establecimiento varchar(100),
+fecha Date,
+id_proveedor int,
+id_transporte int,
+FOREIGN KEY (id_cliente) REFERENCES usuarios(id_usuario),
+FOREIGN KEY (id_proveedor) REFERENCES usuarios(id_usuario),
+FOREIGN KEY (id_transporte) REFERENCES usuarios(id_usuario)
+);
+--TABLA DETALLE COMPRA
+create table det_compra
+(
+id_numero_factura int,
+id_detalle int primary key IDENTITY(1,1),
+id_producto int,
+cantidad int,
+precio_total float,
+total_pagar float,
+FOREIGN KEY (id_numero_factura) REFERENCES enc_compra(id_numero_factura),
+FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
 
 SELECT *FROM USUARIOS

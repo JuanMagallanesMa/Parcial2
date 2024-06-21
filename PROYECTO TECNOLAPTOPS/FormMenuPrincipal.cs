@@ -25,6 +25,7 @@ namespace PROYECTO_TECNOLAPTOPS
         {
             InitializeComponent();
             panelSubmenu();
+            lblNombre.ForeColor = Color.White;
         }
 
 
