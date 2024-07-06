@@ -32,13 +32,13 @@ namespace DATOS_TSP
 
             return conexion;
         }
-        private static Dato_ts datos_teleshopping = new Dato_ts();
+        private static Dato_ts datos_tecnolaptops = new Dato_ts();
         /*Constructor*/
         public Dato_ts() { }
         /*Metodo static que retorna toda la clase*/
         public static Dato_ts getObject()
         {
-            return datos_teleshopping;
+            return datos_tecnolaptops;
         }
 
 
@@ -198,6 +198,39 @@ namespace DATOS_TSP
                 }
             }
             return usuariosDataTable;         
+        }
+        /*Metodo StoredProcedure con parametros para insertar encabezado factura */
+        public void InsertarEncabezadoFactura(int id_establecimiento, int id_caja, int id_cliente, string ruc_establecimiento, DateTime fecha, int id_proveedor, int id_transporte )
+        {
+            string conet = "SP_RegistrarEncFactura";
+            /*Se llama a la conexion*/
+
+            SqlCommand command = new SqlCommand(conet, conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id_establecimiento", id_establecimiento);
+            command.Parameters.AddWithValue("@id_caja", id_caja);
+            command.Parameters.AddWithValue("@id_cliente", id_cliente);
+            command.Parameters.AddWithValue("@ruc_establecimiento", ruc_establecimiento);
+            command.Parameters.AddWithValue("@fecha", fecha);
+            command.Parameters.AddWithValue("@id_proveedor", id_proveedor);
+            command.Parameters.AddWithValue("@id_transporte", id_transporte);
+            AbrirConexion();
+            command.ExecuteNonQuery();
+
+        }
+        public void InsertarDetalleFactura(int id_nummero_factura, int id_producto, int cantidad, float precio_total, float total_pagar)
+        {
+            string conet = "SP_RegistrarDetFactura";
+
+            SqlCommand command = new SqlCommand(conet, conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id_nummero_factura", id_nummero_factura);
+            command.Parameters.AddWithValue("@id_producto", id_producto);
+            command.Parameters.AddWithValue("@cantidad", cantidad);
+            command.Parameters.AddWithValue("@precio_total", precio_total);
+            command.Parameters.AddWithValue("@total_pagar", total_pagar);
+            AbrirConexion();
+            command.ExecuteNonQuery();
         }
 
         /*Metodo StoredProcedure con parametros para insertar proveedor */

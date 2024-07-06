@@ -2,6 +2,8 @@
 using MODULO_FACTURA;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -94,15 +96,18 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
             f.fecha = date.Value.ToString();
             f.cliente = txtNombre.Text;
             f.proveedor = txtProveedor.Text;
-            if(comboEmpresa.SelectedIndex == -1)
+            
+            if (comboEmpresa.SelectedIndex == -1)
             
                 f.empresa = "";
             
             else
             
                 f.empresa = comboEmpresa.SelectedItem.ToString();
+                
 
-            
+
+
             f.subtotal = lblSubtotal.Text;
             f.iva = lblIVA.Text;
             f.total = lblTotal.Text;
@@ -117,5 +122,6 @@ namespace MODULO_PRODUCTOS_DE_CATALOGO
             f.Show();
         }
 
+        
     }
 }

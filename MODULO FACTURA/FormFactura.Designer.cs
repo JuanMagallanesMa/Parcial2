@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFactura));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.productos = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblIVA = new System.Windows.Forms.Label();
@@ -47,12 +48,14 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblcontador = new System.Windows.Forms.Label();
+            this.lblnumerofactura = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblfecha = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblcaja = new System.Windows.Forms.Label();
+            this.lblEstablecimiento = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblruc = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,24 +66,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.imprimir = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGuardarImprimir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productos)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imprimir)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.productos);
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.lblIVA);
@@ -101,10 +104,20 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 63);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1236, 1231);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(209, 1117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 60);
+            this.button1.TabIndex = 74;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // productos
             // 
@@ -113,7 +126,7 @@
             this.productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productos.Location = new System.Drawing.Point(30, 746);
-            this.productos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.productos.Margin = new System.Windows.Forms.Padding(6);
             this.productos.Name = "productos";
             this.productos.RowHeadersWidth = 82;
             this.productos.Size = new System.Drawing.Size(1176, 292);
@@ -277,33 +290,46 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblcontador);
+            this.panel3.Controls.Add(this.lblnumerofactura);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.lblfecha);
-            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.lblcaja);
+            this.panel3.Controls.Add(this.lblEstablecimiento);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.lblruc);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel3.Location = new System.Drawing.Point(586, 12);
-            this.panel3.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.panel3.Margin = new System.Windows.Forms.Padding(12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(618, 510);
             this.panel3.TabIndex = 9;
             // 
-            // lblcontador
+            // lblnumerofactura
             // 
-            this.lblcontador.AutoSize = true;
-            this.lblcontador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcontador.ForeColor = System.Drawing.Color.Red;
-            this.lblcontador.Location = new System.Drawing.Point(326, 167);
-            this.lblcontador.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblcontador.Name = "lblcontador";
-            this.lblcontador.Size = new System.Drawing.Size(28, 30);
-            this.lblcontador.TabIndex = 11;
-            this.lblcontador.Text = "?";
+            this.lblnumerofactura.AutoSize = true;
+            this.lblnumerofactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnumerofactura.ForeColor = System.Drawing.Color.Red;
+            this.lblnumerofactura.Location = new System.Drawing.Point(235, 167);
+            this.lblnumerofactura.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblnumerofactura.Name = "lblnumerofactura";
+            this.lblnumerofactura.Size = new System.Drawing.Size(28, 30);
+            this.lblnumerofactura.TabIndex = 11;
+            this.lblnumerofactura.Text = "?";
+            this.lblnumerofactura.Click += new System.EventHandler(this.lblcontador_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MODULO_FACTURA.Properties.Resources._8541700_barcode_code_icon__2_;
+            this.pictureBox2.Location = new System.Drawing.Point(30, 319);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(546, 163);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // lblfecha
             // 
@@ -316,17 +342,31 @@
             this.lblfecha.TabIndex = 8;
             this.lblfecha.Text = "?";
             // 
-            // label10
+            // lblcaja
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(148, 167);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(172, 30);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "000 000 000 ";
+            this.lblcaja.AutoSize = true;
+            this.lblcaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcaja.ForeColor = System.Drawing.Color.Red;
+            this.lblcaja.Location = new System.Drawing.Point(160, 167);
+            this.lblcaja.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblcaja.Name = "lblcaja";
+            this.lblcaja.Size = new System.Drawing.Size(58, 30);
+            this.lblcaja.TabIndex = 7;
+            this.lblcaja.Text = "001";
+            this.lblcaja.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // lblEstablecimiento
+            // 
+            this.lblEstablecimiento.AutoSize = true;
+            this.lblEstablecimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstablecimiento.ForeColor = System.Drawing.Color.Red;
+            this.lblEstablecimiento.Location = new System.Drawing.Point(108, 167);
+            this.lblEstablecimiento.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblEstablecimiento.Name = "lblEstablecimiento";
+            this.lblEstablecimiento.Size = new System.Drawing.Size(58, 30);
+            this.lblEstablecimiento.TabIndex = 7;
+            this.lblEstablecimiento.Text = "001";
+            this.lblEstablecimiento.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -350,16 +390,17 @@
             this.label12.TabIndex = 5;
             this.label12.Text = "Fecha de emision:";
             // 
-            // label13
+            // lblruc
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(160, 33);
-            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(195, 30);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "0932112233001";
+            this.lblruc.AutoSize = true;
+            this.lblruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblruc.Location = new System.Drawing.Point(160, 33);
+            this.lblruc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblruc.Name = "lblruc";
+            this.lblruc.Size = new System.Drawing.Size(181, 30);
+            this.lblruc.TabIndex = 4;
+            this.lblruc.Text = "093211223301";
+            this.lblruc.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -396,7 +437,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel2.Location = new System.Drawing.Point(30, 258);
-            this.panel2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.panel2.Margin = new System.Windows.Forms.Padding(12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(530, 264);
             this.panel2.TabIndex = 7;
@@ -478,16 +519,16 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Dirección:";
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 17);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Imprime aqui:";
+            this.pictureBox1.Image = global::MODULO_FACTURA.Properties.Resources.LOGOTLC_BG;
+            this.pictureBox1.Location = new System.Drawing.Point(160, 27);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(264, 213);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // printDocument1
             // 
@@ -502,12 +543,13 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
+            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
             // 
             // imprimir
             // 
             this.imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imprimir.Image = global::MODULO_FACTURA.Properties.Resources.print;
-            this.imprimir.Location = new System.Drawing.Point(228, 6);
+            this.imprimir.Location = new System.Drawing.Point(1166, 15);
             this.imprimir.Margin = new System.Windows.Forms.Padding(6);
             this.imprimir.Name = "imprimir";
             this.imprimir.Size = new System.Drawing.Size(24, 24);
@@ -517,27 +559,16 @@
             this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
             this.imprimir.MouseHover += new System.EventHandler(this.imprimir_MouseHover);
             // 
-            // pictureBox2
+            // btnGuardarImprimir
             // 
-            this.pictureBox2.Image = global::MODULO_FACTURA.Properties.Resources._8541700_barcode_code_icon__2_;
-            this.pictureBox2.Location = new System.Drawing.Point(30, 319);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(546, 163);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MODULO_FACTURA.Properties.Resources.LOGOTLC_BG;
-            this.pictureBox1.Location = new System.Drawing.Point(160, 27);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 213);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnGuardarImprimir.Location = new System.Drawing.Point(12, 9);
+            this.btnGuardarImprimir.Name = "btnGuardarImprimir";
+            this.btnGuardarImprimir.Size = new System.Drawing.Size(279, 57);
+            this.btnGuardarImprimir.TabIndex = 74;
+            this.btnGuardarImprimir.Text = "Guardar e Imprimir";
+            this.btnGuardarImprimir.UseVisualStyleBackColor = true;
+            this.btnGuardarImprimir.Click += new System.EventHandler(this.button1_Click);
+            this.btnGuardarImprimir.MouseHover += new System.EventHandler(this.btnGuardarImprimir_MouseHover);
             // 
             // FormFactura
             // 
@@ -545,10 +576,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1236, 1294);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.imprimir);
+            this.Controls.Add(this.btnGuardarImprimir);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Controls.Add(this.imprimir);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -558,11 +589,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.productos)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imprimir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imprimir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,7 +605,6 @@
         private System.Windows.Forms.PictureBox imprimir;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -585,10 +615,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblfecha;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblEstablecimiento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -609,7 +639,10 @@
         private System.Windows.Forms.DataGridView productos;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.Label lblcontador;
+        private System.Windows.Forms.Label lblnumerofactura;
+        private System.Windows.Forms.Label lblcaja;
+        private System.Windows.Forms.Button btnGuardarImprimir;
+        private System.Windows.Forms.Button button1;
     }
 }
 

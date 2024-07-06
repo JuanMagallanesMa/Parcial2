@@ -178,6 +178,16 @@
     <Analyzer Include="..\PROYECTO TECNOLAPTOPS\packages\MSTest.Analyzers.3.4.1\analyzers\dotnet\cs\MSTest.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\PROYECTO TECNOLAPTOPS\packages\MSTest.Analyzers.3.4.1\analyzers\dotnet\cs\MSTest.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATOS_TSP\DATOS_TSP.csproj">
+      <Project>{E7B69279-B3F7-42C1-8C59-16872D15F0C0}</Project>
+      <Name>DATOS_TSP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Menssage Exception\Menssage Exception.csproj">
+      <Project>{F7EA89B6-F847-4F40-8FD3-6D54F7A63DBE}</Project>
+      <Name>Menssage Exception</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

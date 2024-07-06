@@ -183,3 +183,57 @@ BEGIN
     END
 END;
 
+GO
+-- datos almacenados para encabezado de factura
+CREATE procedure SP_RegistrarEncFactura
+@id_establecimiento int,
+@id_caja int,
+@id_cliente int,
+@ruc_establecimiento varchar(100),
+@fecha Date,
+@id_proveedor int,
+@id_transporte int
+AS
+BEGIN
+	INSERT INTO [dbo].[enc_compra]
+           ([id_establecimiento]
+           ,[id_caja]
+           ,[id_cliente]
+           ,[ruc_establecimiento]
+           ,[fecha]
+           ,[id_proveedor]
+           ,[id_transporte])
+     VALUES
+           (@id_establecimiento ,
+			@id_caja ,
+			@id_cliente ,
+			@ruc_establecimiento ,
+			@fecha ,
+			@id_proveedor ,
+			@id_transporte )
+END
+GO
+CREATE procedure SP_RegistrarDetFactura
+@id_numero_factura int,
+@id_producto int,
+@cantidad int,
+@precio_total float,
+@total_pagar float
+AS
+BEGIN
+	INSERT INTO [dbo].[det_compra]
+           ([id_numero_factura]
+           ,[id_producto]
+           ,[cantidad]
+           ,[precio_total]
+           ,[total_pagar])
+     VALUES
+           (@id_numero_factura ,
+			@id_producto ,
+			@cantidad ,
+			@precio_total ,
+			@total_pagar )
+END
+GO
+select * from usuarios
+Select id_usuario from usuarios where tipo_usuario = 'Empresa de transporte'
