@@ -21,6 +21,7 @@ namespace PROYECTO_TECNOLAPTOPS
         /* Instanciamos las clases a utilizar*/
         FormMenuPrincipal p = new FormMenuPrincipal();
         FormMenuAdmin a = new FormMenuAdmin();
+        FormInicio inicio  = new FormInicio();
 
         
         
@@ -60,6 +61,7 @@ namespace PROYECTO_TECNOLAPTOPS
                 {
                     string nombreUsuario = table.Rows[0]["nombre_completo"].ToString();
                     this.Hide();
+                    inicio.Hide();
 
 
                     if (table.Rows[0][1].ToString() == "Administrador")
@@ -67,13 +69,16 @@ namespace PROYECTO_TECNOLAPTOPS
                         MessageBox.Show("Usuario Administrador");
 
                         a.Show();
-                        
+                        inicio.Hide();
+
+
                     }
                     else if (table.Rows[0][1].ToString() == "Cliente")
                     {
                         MessageBox.Show("Usuario Cliente");
                         p.SetNombre_Usuario(nombreUsuario);
                         p.Show();
+                        inicio.Close();
                         p.btnProveedor.Enabled = false;
                         p.btnTransporte.Enabled = false;
                     }
@@ -82,6 +87,7 @@ namespace PROYECTO_TECNOLAPTOPS
                         MessageBox.Show("Usuario Proveedor");
                         p.SetNombre_Usuario(nombreUsuario);
                         p.Show();
+                        inicio.Close();
                         p.btnUsuario.Enabled = false;
                         p.btnTransporte.Enabled = false;
                         p.btnCatalogo.Enabled = false;  
@@ -93,6 +99,7 @@ namespace PROYECTO_TECNOLAPTOPS
                         MessageBox.Show("Usuario Empresa de transporte");
                         p.SetNombre_Usuario(nombreUsuario);
                         p.Show();
+                        inicio.Hide();
                         p.btnUsuario.Enabled = false;
                         p.btnCatalogo.Enabled = false;
                         p.btnProveedor.Enabled = false;

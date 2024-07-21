@@ -56,9 +56,7 @@ namespace PROYECTO_TECNOLAPTOPS
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormInicio inicio = new FormInicio();
-            inicio.Show();
+           this.Close();
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
